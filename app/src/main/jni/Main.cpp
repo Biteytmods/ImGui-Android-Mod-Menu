@@ -134,7 +134,15 @@ void *hack_thread(void *) {
     HK(Runner, FloatExample, old_FloatExample); //MSHookFunction
   
     Menu::Patch.map = MemoryPatch::createWithHex(targetLibName, Runner,"0000000000000000");
+    Patch.map.Modify();
     
+    Patch.minimap = MemoryPatch::createWithHex("libil2cpp.so", Runner, "0000000000000000");
+        if(SWITCH.Memorypatchtest){
+            Patch.minimap.Modify();
+            } else {
+            Patch.minimap.Restore();
+         }
+                      
     return NULL;
 }
 

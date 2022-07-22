@@ -86,13 +86,12 @@ namespace Menu
       bool VoidExample = false;
       bool Memorycoins = false;
       bool Memorypatchtest = false;
-      bool Keyboard = false;
       
     } SWITCH; //you can write whatever you want and use SWITCH.BoolExample
 
     struct {
         
-    MemoryPatch miniMap, map;
+    MemoryPatch minimap, map;
     
     }Patch;
 
@@ -150,12 +149,6 @@ namespace Menu
                       ImGui::Checkbox("Void", &SWITCH.VoidExample);
                       
                       Checkbox("memorypatch", &SWITCH.Memorypatchtest);
-                      if(SWITCH.Memorypatchtest){
-                          Patch.map.Modify();
-                          } else {
-                          Patch.map.Restore();
-                      }
-                      
                      ImGui::EndTabItem();
                   }
                   if (ImGui::BeginTabItem("Section 2"))
@@ -165,7 +158,6 @@ namespace Menu
                       Checkbox("Show window", &show_another_window);
                       ImGui::Checkbox("Demo and Settings Panel", &show_demo_window);      // Edit bools storing our window open/close state
                       ImGui::Text("Does Nothing But Looks Cool");
-                      Checkbox("keyboard", &SWITCH.Keyboard);
                       
                       ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
                       ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
