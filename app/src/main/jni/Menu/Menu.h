@@ -4,7 +4,6 @@
 #include "Themes.h"
 #include "../Data/Fonts/Roboto-Regular.h"
 
-
 using namespace ImGui;
 static bool init;
 int  glWidth, glHeight;
@@ -86,10 +85,18 @@ namespace Menu
       bool IntExample = false;
       bool VoidExample = false;
       bool Memorycoins = false;
+      bool Memorypatchtest = false;
+      bool Keyboard = false;
       
     } SWITCH; //you can write whatever you want and use SWITCH.BoolExample
 
+    struct {
+        
+    MemoryPatch miniMap, map;
     
+    }Patch;
+
+
     int (*Screen_get_width)();
     int (*Screen_get_height)();
     ImVec4 color = ImVec4(1, 1, 1, 1);
@@ -141,6 +148,14 @@ namespace Menu
                       ImGui::Checkbox("Set 100", &SWITCH.FloatExample);
                       Checkbox("int", &SWITCH.IntExample);
                       ImGui::Checkbox("Void", &SWITCH.VoidExample);
+                      
+                      Checkbox("memorypatch", &SWITCH.Memorypatchtest);
+                      if(SWITCH.Memorypatchtest){
+                          Patch.map.Modify();
+                          } else {
+                          Patch.map.Restore();
+                      }
+                      
                      ImGui::EndTabItem();
                   }
                   if (ImGui::BeginTabItem("Section 2"))
@@ -150,6 +165,8 @@ namespace Menu
                       Checkbox("Show window", &show_another_window);
                       ImGui::Checkbox("Demo and Settings Panel", &show_demo_window);      // Edit bools storing our window open/close state
                       ImGui::Text("Does Nothing But Looks Cool");
+                      Checkbox("keyboard", &SWITCH.Keyboard);
+                      
                       ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
                       ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
                       ImGui::Text("Button Tap Counter");

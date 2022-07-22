@@ -10,9 +10,6 @@ struct {
     Color ZombieColor = Color::red();
 } FT;
 
-struct Patches{
-    MemoryPatch *miniMap, *map;
-}patch;
 
 //declare a variable where the offset we get from bynamemodding sits
 uintptr_t Speed = 0x0;
@@ -136,7 +133,7 @@ void *hack_thread(void *) {
     DHK(Runner, Level, old_Level); //DobbyHook
     HK(Runner, FloatExample, old_FloatExample); //MSHookFunction
   
-    
+    Menu::Patch.map = MemoryPatch::createWithHex(targetLibName, Runner,"0000000000000000");
     
     return NULL;
 }

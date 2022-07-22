@@ -34,10 +34,8 @@
 #include "Includes/FileWrapper.h"
 #include "Menu/Menu.h"
 #include "Color.h"
-#include "Hacks/Hooks.h"
 
 
 using namespace BNM;
 using namespace Menu;
-using namespace Hooks;
 

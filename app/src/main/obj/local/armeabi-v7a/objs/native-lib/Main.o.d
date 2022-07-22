@@ -99,9 +99,8 @@ src/main/obj/local/armeabi-v7a/objs/native-lib/Main.o: \
   src/main/jni/ImGui/imgui_internal.h \
   src/main/jni/ImGui/imstb_textedit.h src/main/jni/Includes/JNIStuff.h \
   src/main/jni/Includes/FileWrapper.h src/main/jni/Menu/Menu.h \
-  src/main/jni/Menu/Themes.h \
-  src/main/jni/Menu/../Data/Fonts/Roboto-Regular.h src/main/jni/Color.h \
-  src/main/jni/Hacks/Hooks.h
+  src/main/jni/Menu/JNIStuff.h src/main/jni/Menu/Themes.h \
+  src/main/jni/Menu/../Data/Fonts/Roboto-Regular.h src/main/jni/Color.h
 
 src/main/jni/MainHeader.h:
 
@@ -319,10 +318,10 @@ src/main/jni/Includes/FileWrapper.h:
 
 src/main/jni/Menu/Menu.h:
 
+src/main/jni/Menu/JNIStuff.h:
+
 src/main/jni/Menu/Themes.h:
 
 src/main/jni/Menu/../Data/Fonts/Roboto-Regular.h:
 
 src/main/jni/Color.h:
-
-src/main/jni/Hacks/Hooks.h:
