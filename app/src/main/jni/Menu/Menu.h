@@ -104,6 +104,7 @@ namespace Menu
     
     void DrawMenu() /*main menu function*/
     {
+        ImGuiIO &io = ImGui::GetIO();
         
         static bool show_demo_window = false;
         static bool show_another_window = false;
@@ -112,7 +113,7 @@ namespace Menu
         static bool show_app_style_editor = false;
         static bool show_app_about = false;
         static bool showtabmenu = false;
-
+        
         static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
        
@@ -157,8 +158,8 @@ namespace Menu
                       ImGui::Checkbox("FrameRate Viewer", &showfrm);
                       Checkbox("Show window", &show_another_window);
                       ImGui::Checkbox("Demo and Settings Panel", &show_demo_window);      // Edit bools storing our window open/close state
-                      ImGui::Text("Does Nothing But Looks Cool");
                       
+            
                       ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
                       ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
                       ImGui::Text("Button Tap Counter");

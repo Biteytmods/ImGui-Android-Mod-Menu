@@ -132,10 +132,12 @@ void *hack_thread(void *) {
     
     DHK(Runner, Level, old_Level); //DobbyHook
     HK(Runner, FloatExample, old_FloatExample); //MSHookFunction
-  
+    
+    //patchoffset
     Menu::Patch.map = MemoryPatch::createWithHex(targetLibName, Runner,"0000000000000000");
     Patch.map.Modify();
     
+    //patch toggle
     Patch.minimap = MemoryPatch::createWithHex("libil2cpp.so", Runner, "0000000000000000");
         if(SWITCH.Memorypatchtest){
             Patch.minimap.Modify();
